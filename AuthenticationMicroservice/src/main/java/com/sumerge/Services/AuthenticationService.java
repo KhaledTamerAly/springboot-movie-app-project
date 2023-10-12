@@ -10,8 +10,12 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
+    public String getAllUsers()
+    {
+        return userRepository.findAll().toString();
+    }
     public boolean login(User user)
     {
         return userRepository.exists(Example.of(user));
