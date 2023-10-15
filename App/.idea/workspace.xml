@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="345eef6f-dc3e-4812-b14d-0d9e1496f996" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sumerge/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MovieMicroservice/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MovieMicroservice/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/AuthenticationMicroservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/AuthenticationMicroservice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Models/CredentialsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Models/CredentialsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Models/JWTResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Models/JWTResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MovieMicroservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieMicroservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/Controllers/MoviesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/Movie/Controllers/MoviesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/MovieMicroservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/Movie/MovieMicroservice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/Services/MoviesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieMicroservice/src/main/java/com/sumerge/Movie/Services/MoviesServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AuthenticationMicroservice/src/main/java/com/sumerge/Auth/Utils/JwtUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

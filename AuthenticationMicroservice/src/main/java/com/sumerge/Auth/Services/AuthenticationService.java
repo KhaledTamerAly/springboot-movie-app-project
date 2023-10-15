@@ -33,7 +33,7 @@ public class AuthenticationService {
     {
         if(userRepository.exists(Example.of(user)))
         {
-            return this.jwtUtils.generateToken(user.getName());
+            return this.jwtUtils.generateToken(user.getEmail());
         }
         else
             return null;

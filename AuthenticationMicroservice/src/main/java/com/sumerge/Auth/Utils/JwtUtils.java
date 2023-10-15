@@ -8,11 +8,11 @@ import java.util.Date;
 
 public class JwtUtils
 {
-    public String generateToken(String username)
+    public String generateToken(String email)
     {
        return JWT.create()
-               .withSubject(username)
-               .withIssuedAt(new Date())
+               .withSubject(email)
+               .withIssuedAt(new Date(System.currentTimeMillis()))
                .withExpiresAt(new Date(System.currentTimeMillis() + 15 * 60 * 1000))
                .sign(Algorithm.HMAC256("secret"));
     }
