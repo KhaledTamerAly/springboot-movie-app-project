@@ -1,6 +1,6 @@
-package com.sumerge.Controllers;
+package com.sumerge.Movie.Controllers;
 
-import com.sumerge.Services.MoviesServices;
+import com.sumerge.Movie.Services.MoviesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;

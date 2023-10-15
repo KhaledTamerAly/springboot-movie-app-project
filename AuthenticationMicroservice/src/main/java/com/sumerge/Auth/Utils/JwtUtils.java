@@ -1,4 +1,4 @@
-package com.sumerge.Utils;
+package com.sumerge.Auth.Utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

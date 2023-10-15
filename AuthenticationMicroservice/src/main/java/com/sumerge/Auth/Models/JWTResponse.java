@@ -1,4 +1,4 @@
-package com.sumerge.Models;
+package com.sumerge.Auth.Models;
 
 public class JWTResponse {
     private String token;

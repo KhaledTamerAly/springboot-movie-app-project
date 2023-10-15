@@ -1,4 +1,4 @@
-package com.sumerge.Services;
+package com.sumerge.Movie.Services;
 
 import org.springframework.stereotype.Service;
 

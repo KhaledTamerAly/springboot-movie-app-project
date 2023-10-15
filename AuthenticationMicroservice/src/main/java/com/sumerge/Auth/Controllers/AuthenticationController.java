@@ -1,9 +1,9 @@
-package com.sumerge.Controllers;
+package com.sumerge.Auth.Controllers;
 
-import com.sumerge.Models.CredentialsRequest;
-import com.sumerge.Models.JWTResponse;
-import com.sumerge.Models.User;
-import com.sumerge.Services.AuthenticationService;
+import com.sumerge.Auth.Models.CredentialsRequest;
+import com.sumerge.Auth.Models.JWTResponse;
+import com.sumerge.Auth.Models.User;
+import com.sumerge.Auth.Services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

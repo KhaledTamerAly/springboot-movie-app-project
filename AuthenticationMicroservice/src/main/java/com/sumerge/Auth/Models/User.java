@@ -1,4 +1,4 @@
-package com.sumerge.Models;
+package com.sumerge.Auth.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
