@@ -5,6 +5,7 @@ import com.sumerge.Auth.Models.JWTResponse;
 import com.sumerge.Auth.Models.User;
 import com.sumerge.Auth.Services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,10 +36,14 @@ public class AuthenticationController
         authenticationService.logout(user);
     }
     @PostMapping(value = "/signup")
-    public void signUp(@RequestBody User user)
+    public ResponseEntity<String> signUp(@RequestBody User user)
     {
         boolean success = authenticationService.signUp(user);
         System.out.println("Sign up is: " + success);
+        if(!success)
+            return new ResponseEntity<>("User already taken", HttpStatus.BAD_REQUEST);
+        else
+            return new ResponseEntity<>("User saved", HttpStatus.OK);
     }
     @GetMapping(value = "/users")
     public String getUsers()

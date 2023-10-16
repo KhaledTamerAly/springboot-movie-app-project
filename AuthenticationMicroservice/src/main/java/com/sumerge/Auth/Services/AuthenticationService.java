@@ -5,20 +5,29 @@ import com.sumerge.Auth.Repositories.UserRepository;
 import com.sumerge.Auth.Utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
 
 @Service
 public class AuthenticationService {
 
     @Autowired
     UserRepository userRepository;
-
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
     private JwtUtils jwtUtils;
-
-    public AuthenticationService()
-    {
-        this.jwtUtils = new JwtUtils();
-    }
 
     public User getUserCredFromEmail(String email)
     {
@@ -31,8 +40,11 @@ public class AuthenticationService {
     }
     public String login(User user)
     {
-        if(userRepository.exists(Example.of(user)))
+        User existingUser = userRepository.findByEmail(user.getEmail());
+        if(existingUser != null && passwordEncoder.matches(user.getPassword(), existingUser.getPassword()))
         {
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
+            SecurityContextHolder.getContext().setAuthentication(authentication);
             return this.jwtUtils.generateToken(user.getEmail());
         }
         else
@@ -44,12 +56,12 @@ public class AuthenticationService {
     }
     public boolean signUp(User user)
     {
-        boolean isExist = userRepository.existsById(user.getEmail());
+        boolean isExist = userRepository.existsByEmail(user.getEmail());
         if(isExist)
             return false;
         else
         {
-            userRepository.save(user);
+            userRepository.save(new User(user.getName(), user.getEmail(), passwordEncoder.encode(user.getPassword())));
             return true;
         }
     }
