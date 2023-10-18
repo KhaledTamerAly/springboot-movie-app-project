@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 @Service
@@ -50,9 +51,9 @@ public class AuthenticationService {
         else
             return null;
     }
-    public void logout(User user)
+    public ArrayList<String> logout(String token)
     {
-        //new JwtUtils().invalidateToken();
+        return this.jwtUtils.invalidateToken(token);
     }
     public boolean signUp(User user)
     {
