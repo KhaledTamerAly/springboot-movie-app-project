@@ -1,6 +1,7 @@
 package com.sumerge.Movie.Controllers;
 
 import com.sumerge.Movie.Services.MoviesServices;
+import com.sumerge.Movie.Utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,11 +16,16 @@ public class MoviesController
     @GetMapping("/movies")
     public String getAllMovies(@RequestParam String page)
     {
-        return this.moviesServices.getMovies(page);
+        if(StringUtils.isInt(page))
+            return this.moviesServices.getMovies(page);
+        else
+            return "Incorrect page number";
     }
     @GetMapping("/movies/{id}")
     public String getMovie(@PathVariable String id)
     {
-        return this.moviesServices.getMovie(id);
+        if(StringUtils.isInt(id))
+            return this.moviesServices.getMovie(id);
+        else return "Incorrect movie id";
     }
 }
