@@ -60,10 +60,11 @@ public class AuthenticationService {
         boolean isExist = userRepository.existsByEmail(user.getEmail());
         if(isExist)
             return false;
-        else
+        else if(user.getEmail().contains("@"))
         {
             userRepository.save(new User(user.getName(), user.getEmail(), passwordEncoder.encode(user.getPassword())));
             return true;
         }
+        return false;
     }
 }
