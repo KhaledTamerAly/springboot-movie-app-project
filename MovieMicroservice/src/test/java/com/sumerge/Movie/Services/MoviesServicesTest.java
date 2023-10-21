@@ -1,11 +1,13 @@
 package com.sumerge.Movie.Services;
 
+import com.sumerge.Movie.MovieMicroservice;
 import okhttp3.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 
@@ -15,6 +17,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest(classes = MovieMicroservice.class)
 public class MoviesServicesTest {
 
     @InjectMocks

@@ -1,6 +1,5 @@
 package com.sumerge.Auth.Controllers;
 
-import com.sumerge.Auth.Models.CredentialsRequest;
 import com.sumerge.Auth.Models.JWTResponse;
 import com.sumerge.Auth.Models.User;
 import com.sumerge.Auth.Services.AuthenticationService;
@@ -9,25 +8,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @RestController
 public class AuthenticationController
 {
     @Autowired
     private AuthenticationService authenticationService;
 
-    @PostMapping(value = "/user")
-    public ResponseEntity<?> getUserCredentials(@RequestBody CredentialsRequest credentialsRequest)
-    {
-        User user = authenticationService.getUserCredFromEmail(credentialsRequest.getEmail());
-        return ResponseEntity.ok(user);
-    }
     @PostMapping(value = "/login")
     public ResponseEntity<?> login(@RequestBody User user)
     {
         String token = authenticationService.login(user);
-        return ResponseEntity.ok(new JWTResponse(token));
+        if(token != null)
+            return ResponseEntity.ok(new JWTResponse(token));
+        else
+            return ResponseEntity.badRequest().body("Incorrect login");
     }
     @PostMapping(value = "/signout")
     public ResponseEntity<?> logout(@RequestHeader(value="Authorization") String token) {
@@ -36,7 +30,7 @@ public class AuthenticationController
             token = token.substring(7);
             return ResponseEntity.ok(authenticationService.logout(token));
         }
-        return new ResponseEntity<>("No token given", HttpStatus.OK);
+        return new ResponseEntity<>("No token given", HttpStatus.BAD_REQUEST);
     }
     @PostMapping(value = "/signup")
     public ResponseEntity<String> signUp(@RequestBody User user)
